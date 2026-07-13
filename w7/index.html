@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carouser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="viewport">
+        <div id="box">
+            <img class="pic" src="img/01.png" alt="slide 1">
+            <img class="pic" src="img/02.png" alt="slide 2">
+            <img class="pic" src="img/03.png" alt="slide 3">
+            <img class="pic" src="img/04.png" alt="slide 4">
+            <img class="pic" src="img/06.png" alt="slide 5">
+        </div>
+    </div>
+
+    <div id="boxing">
+        <button onclick="set_timer()" id="btm" class="bt" aria-label="play/pause">⏸</button>
+        <div id="box-dot"></div>
+    </div>
+</div>
+
+<script src="code.js"></script>
+</body>
+</html>

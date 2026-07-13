@@ -1,0 +1,23 @@
+#d1, #d2 {
+    border-radius: 20px;
+    height: 5px;
+}
+
+#d1{
+    width: 5px;
+    background: rgb(255, 0, 0);
+}
+
+#d2{
+    width: 500px;
+    background: #e3e3e3;
+}
+
+#b1, #b2, #b3 {
+    width: 30px;
+    height: 20px;
+}
+
+#p1 {
+    font-family: "Helvetica Neue" , Arial;
+}
