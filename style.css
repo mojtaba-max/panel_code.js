@@ -36,12 +36,7 @@
 }
 
 html{
-        background:
-            linear-gradient(
-                    180deg,
-                    var(--bg-top),
-                    var(--bg-bottom)
-            );
+        background: var(--bg-top) ;
 }
 
 
