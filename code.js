@@ -5,7 +5,7 @@ let mv = document.getElementById('mv');
 mv.innerText = String(cards.length).padStart(2, '0');
 
 let md = document.getElementById('md');
-md.innerText = titles[titles.length - 1].innerText;
+md.innerText = titles[0].innerText;
 
 
 let search = document.getElementById('search');
