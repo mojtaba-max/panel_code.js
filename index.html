@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#020203">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="icon" href="favicon.png">
@@ -15,139 +16,225 @@
 <div class="app">
 
 
-
-    <div class="hero">
+    <header class="hero">
         <div class="hero-content">
-             <h1 class="h22">Code</h1><h1 class="h11">.JS</h1>
+            <h1 class="h22">Code</h1><h1 class="h11">.JS</h1>
         </div>
-
-        <p>Practice projects, UI experiments, and small interactive builds.</p>
-    </div>
-
+        <p>Practice projects, UI experiments &amp; interactive builds.</p>
+    </header>
 
 
     <div class="topRow">
 
         <div class="miniCard">
-            <div class="miniLabel">Total Projects</div>
+            <div class="miniIcon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
             <div id="mv" class="miniValue">00</div>
+            <div class="miniLabel">Projects</div>
         </div>
 
         <div class="miniCard">
-            <div class="miniLabel">Current Focus</div>
-            <div id="md" class="miniValue">DOM & Logic</div>
+            <div class="miniIcon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="miniValue miniValue-text">DOM &amp; Logic</div>
+            <div class="miniLabel">Focus</div>
+        </div>
+
+        <div class="miniCard">
+            <div class="miniIcon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+            </div>
+            <div id="md" class="miniValue miniValue-text">—</div>
+            <div class="miniLabel">Latest</div>
         </div>
 
     </div>
 
+
+    <div class="listHead">
+        <div class="section-title">Projects</div>
+
+        <div class="search-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="search" type="search" placeholder="Search projects" aria-label="Search projects" autocomplete="off">
+        </div>
+    </div>
+
+
     <div class="box">
 
 
-        <a class="card" href="w1/in.html">
+        <a class="card" href="w1/in.html" data-tags="timer interval progress تایمر تایم">
             <div class="dd">
-                <div class="num">01</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Set Interval</h3>
                     <p>تمرین تایم ها در جاواسکریپت</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Timer</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w2/index.html">
+        <a class="card" href="w2/index.html" data-tags="timer interval grid تایمر تایم">
             <div class="dd">
-                <div class="num">02</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Set Interval - 2.0</h3>
                     <p>تمرین تایم ها در جاواسکریپت بخش </p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Timer</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w3/index.html">
+        <a class="card" href="w3/index.html" data-tags="game controller بازی کنترلر">
             <div class="dd">
-                <div class="num">03</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="5"/><path d="M8 10v4M6 12h4"/><circle cx="16" cy="12" r="1"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Game Control</h3>
                     <p>ساخت بازی با کنترلر</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Game</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w4/index.html">
+        <a class="card" href="w4/index.html" data-tags="search photos robots جستجو عکس">
             <div class="dd">
-                <div class="num">04</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Search Photos</h3>
                     <p>جستجوی عکس با عدد</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">UI</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w5/index.html">
+        <a class="card" href="w5/index.html" data-tags="captcha security کپچا امنیت">
             <div class="dd">
-                <div class="num">05</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Captcha</h3>
                     <p>ساخت کپچا</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Tool</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-
-        <a class="card" href="w6/index.html">
+        <a class="card" href="w6/index.html" data-tags="calculator math ماشین حساب">
             <div class="dd">
-                <div class="num">06</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Calculator</h3>
                     <p>ساخت ماشین حساب</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Tool</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w7/index.html">
+        <a class="card" href="w7/index.html" data-tags="carousel slider gallery کرسل اسلایدر">
             <div class="dd">
-                <div class="num">07</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.5"/><path d="m21 15-4.5-4.5L7 19"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Carousel</h3>
                     <p>ساخت کرسل</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">UI</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w8/index.html">
+        <a class="card" href="w8/index.html" data-tags="hangman flags guess بازی پرچم حدس">
             <div class="dd">
-                <div class="num">08</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4L18 12H5"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Hang Man</h3>
                     <p>بازی حدس پرچم کشورها</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Game</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
-        <a class="card" href="w9/index.html">
+        <a class="card" href="w9/index.html" data-tags="memory cards match بازی کارت حافظه">
             <div class="dd">
-                <div class="num">09</div>
+                <div class="chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="10" height="13" rx="2"/><path d="M9 4h8a2 2 0 0 1 2 2v11"/></svg>
+                </div>
                 <div class="inf">
                     <h3 class="h3">Memory Game</h3>
                     <p>بازی کارتی میموری گیم</p>
                 </div>
             </div>
-            <div class="row">›</div>
+            <div class="meta">
+                <span class="tag">Game</span>
+                <span class="row">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </span>
+            </div>
         </a>
 
 
     </div>
 
+    <div id="empty" class="empty">No project matches your search.</div>
 
-    <div class="footer">Designed By @mojtaba <br>Version 2.5<br></div>
+
+    <div class="footer">Designed By @mojtaba <br>Version 2.7<br></div>
 
 </div>
 

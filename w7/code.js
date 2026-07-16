@@ -80,12 +80,14 @@ function set_timer() {
 
     if (timer !== "stop") {
         clearInterval(timer);
-        btm.innerText = '\u25B6';
+        btm.classList.add("is-paused");
+        btm.setAttribute("aria-label", "Play");
         timer = "stop";
 
     } else {
         timer = setInterval(go_po, sec);
-        btm.innerText = '\u23F8';
+        btm.classList.remove("is-paused");
+        btm.setAttribute("aria-label", "Pause");
 
 
     }

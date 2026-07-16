@@ -1,9 +1,24 @@
+html {
+    background: #0d1117;
+    overflow: hidden;
+    height: 100%;
+    height: 100dvh;
+}
+
 body {
     font-family: sans-serif;
     background: #0d1117;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #c9d1d9;
+    margin: 0;
+    height: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+    box-sizing: border-box;
 
 }
 

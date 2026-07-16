@@ -4,21 +4,42 @@
     color: #fff;
     margin: 0;
 }
+
+html {
+    background: #0b0b0c;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    height: 100dvh;
+}
+
 body {
     font-family: "Apple Braille", sans-serif;
     background: #0b0b0c;
-    height: 100vh;
+    height: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
     margin: 0;
     display: flex;
     justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    box-sizing: border-box;
 
 
 }
 
 .box {
     width: 500px;
-    height: 100vh;
+    height: 100%;
+    max-height: 100dvh;
     padding-top: 150px;
+    padding-bottom: 40px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
 
     position: relative;
@@ -239,5 +260,81 @@ body {
     top: 70px;
     font-size: 40px;
     color: rgba(247, 255, 0, 0.8);
+
+}
+
+
+
+@media (max-width:430px){
+
+    .wr{
+        width:100%;
+        max-width:100%;
+        padding:0 16px;
+        box-sizing:border-box;
+    }
+
+    .search{
+        top:120px;
+        width:calc(100% - 48px);
+        max-width:350px;
+        left:50%;
+        transform:translateX(-50%);
+        padding:16px 20px;
+        font-size:16px;
+    }
+
+    .search:focus{
+        width:calc(100% - 24px);
+        top:12px;
+        transform:translateX(-50%);
+    }
+
+    .box{
+        width:100%;
+        max-width:100%;
+        height:auto;
+        min-height:100%;
+        padding-top:110px;
+        padding-bottom:40px;
+        grid-template-columns:1fr;
+        justify-items:center;
+        gap:16px;
+        transform:translateY(220px);
+    }
+
+    .wr:focus-within .box{
+        transform:translateY(0);
+    }
+
+    .dd{
+        width:210px;
+        margin-top:0;
+    }
+
+    #x1{
+        top:72px;
+        left:50%;
+        margin-left:-175px;
+    }
+
+    #rr{
+        position:fixed;
+        top:160px;
+        left:50%;
+        margin-left:-150px;
+        width:300px;
+        height:140px;
+    }
+
+    #rr2{
+        width:300px;
+        height:140px;
+    }
+
+    #rr3{
+        font-size:28px;
+        top:50px;
+    }
 
 }
