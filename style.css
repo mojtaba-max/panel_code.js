@@ -1,25 +1,33 @@
 :root{
 
-    --brand:#2DD4BF;
-    --brand-light:#5EEAD4;
+    --brand:#47FE90;
+    --brand-light:#47FE90;
 
-    --bg-base:#020203;
+    --bg-base:#0F0F10;
 
     --glass-blur:blur(14px) saturate(115%);
 
-    --surface:rgba(28,28,31,0.82);
-    --surface-hover:rgba(34,34,38,0.86);
-    --surface-input:rgba(22,22,25,0.76);
+    --surface:#171718;
+    --surface-hover:#232326;
+    --surface-input:#171718;
 
-    --surface-border:rgba(255,255,255,0.04);
-    --surface-border-hover:rgba(255,255,255,0.07);
+    --card-hover:#1B1B1D;
+    --card-border-hover:#222224;
 
-    --chip-bg:#222226;
-    --chip-bg-hover:#28282d;
+    --surface-border:#1C1C1E;
+    --surface-border-hover:#252528;
 
-    --text:#f4f4f5;
-    --text-soft:rgba(255,255,255,0.68);
-    --text-faint:rgba(255,255,255,0.42);
+    --chip-bg:#1E1E20;
+    --chip-bg-hover:#2A2A2D;
+
+    --accent-red:#FF4D5E;
+    --accent-blue:#3D9BFF;
+    --accent-amber:#FF9A2E;
+    --accent-green:var(--brand);
+
+    --text:#ECECED;
+    --text-soft:#A1A1A6;
+    --text-faint:#6E6E73;
 
     --org:var(--brand-light);
 
@@ -28,31 +36,6 @@
 
 html{
     background-color:var(--bg-base);
-    background-image:
-            radial-gradient(
-                    ellipse 90% 75% at 8% 98%,
-                    rgba(13,148,136,0.32) 0%,
-                    rgba(13,148,136,0.10) 38%,
-                    transparent 66%
-            ),
-            radial-gradient(
-                    ellipse 85% 70% at 98% 95%,
-                    rgba(251,113,60,0.34) 0%,
-                    rgba(239,68,68,0.12) 36%,
-                    transparent 64%
-            ),
-            radial-gradient(
-                    ellipse 70% 58% at 78% 55%,
-                    rgba(219,39,119,0.28) 0%,
-                    rgba(168,28,90,0.08) 44%,
-                    transparent 68%
-            ),
-            radial-gradient(
-                    ellipse 120% 85% at 50% -8%,
-                    rgba(0,0,0,0.88) 0%,
-                    transparent 62%
-            );
-    background-attachment:fixed;
 
     overflow-x:hidden;
     width:100%;
@@ -94,7 +77,7 @@ body{
     display:flex;
     justify-content:center;
 
-    padding:52px 24px 48px;
+    padding:52px 28px 52px;
 }
 
 
@@ -114,48 +97,20 @@ body{
 
 .hero{
 
-    margin-bottom:36px;
-}
-
-.hero-content{
-    display:flex;
-    align-items:end;
+    margin-bottom:40px;
 }
 
 .hero h1{
 
-    letter-spacing:-3px;
+    color:#F5F5F6;
 
-    line-height:1;
-
-    color:var(--org);
-}
-
-.hero .h11{
-    font-weight:700;
-    font-size:53px;
-}
-
-.hero .h22{
+    font-size:56px;
     font-weight:800;
-    font-size:58px;
-    color:#fff;
-    margin-right:3px;
-}
 
-.hero p{
+    letter-spacing:-1.2px;
+    line-height:1.05;
 
-    margin-top:16px;
-
-    max-width:480px;
-
-    color:var(--text-soft);
-
-    font-size:15px;
-
-    font-weight:400;
-
-    line-height:1.7;
+    padding-left:14px;
 }
 
 
@@ -175,6 +130,8 @@ body{
 
 .miniCard{
 
+    --accent:#FF4D5E;
+
     padding:20px 18px;
 
     border-radius:var(--radius);
@@ -185,6 +142,18 @@ body{
     -webkit-backdrop-filter:var(--glass-blur);
 
     border:1px solid var(--surface-border);
+}
+
+.miniCard--projects{
+    --accent:#FF4D5E;
+}
+
+.miniCard--focus{
+    --accent:#3D9BFF;
+}
+
+.miniCard--latest{
+    --accent:#FF9A2E;
 }
 
 .miniIcon{
@@ -200,11 +169,11 @@ body{
 
     margin-bottom:14px;
 
-    color:var(--text-soft);
+    color:var(--accent);
 
     background:var(--chip-bg);
 
-    border:1px solid var(--surface-border);
+    border:none;
 }
 
 .miniIcon svg{
@@ -225,7 +194,7 @@ body{
 
     letter-spacing:-0.5px;
 
-    color:var(--text);
+    color:color-mix(in srgb, var(--accent) 42%, var(--text));
 
     margin-bottom:4px;
 
@@ -260,25 +229,7 @@ body{
 
 .listHead{
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:12px;
-
     margin-bottom:14px;
-}
-
-.section-title{
-
-    font-size:12px;
-    font-weight:600;
-
-    letter-spacing:0.5px;
-
-    text-transform:uppercase;
-
-    color:var(--text-faint);
 }
 
 .search-wrap{
@@ -299,11 +250,11 @@ body{
 
     padding:10px 16px;
 
-    width:240px;
+    width:100%;
 }
 
 .search-wrap:focus-within{
-    background:var(--surface);
+    background:var(--surface-hover);
     border-color:var(--surface-border-hover);
 }
 
@@ -364,6 +315,8 @@ body{
 
 .card{
 
+    --card-accent:var(--brand);
+
     background:var(--surface);
 
     backdrop-filter:var(--glass-blur);
@@ -385,22 +338,32 @@ body{
 
 }
 
-
-.card:hover{
-
-    background:var(--surface-hover);
-    border-color:var(--surface-border-hover);
+.card--red{
+    --card-accent:var(--accent-red);
 }
+
+.card--blue{
+    --card-accent:var(--accent-blue);
+}
+
+.card--amber{
+    --card-accent:var(--accent-amber);
+}
+
+.card--green{
+    --card-accent:var(--accent-green);
+}
+
 
 .card.is-active{
 
-    background:var(--surface-hover);
-    border-color:rgba(45,212,191,0.35);
-    box-shadow:0 0 0 1px rgba(45,212,191,0.18);
+    background:var(--card-hover);
+    border-color:color-mix(in srgb, var(--brand) 35%, transparent);
+    box-shadow:0 0 0 1px color-mix(in srgb, var(--brand) 18%, transparent);
 }
 
 .card:focus-visible{
-    outline:2px solid rgba(45,212,191,0.55);
+    outline:2px solid color-mix(in srgb, var(--brand) 55%, transparent);
     outline-offset:2px;
 }
 
@@ -431,11 +394,13 @@ body{
 
     flex-shrink:0;
 
-    color:var(--text-soft);
+    color:#D4D4D8;
 
     background:var(--chip-bg);
 
-    border:1px solid var(--surface-border);
+    border:none;
+
+    transition:color 0.22s ease;
 }
 
 .chip svg{
@@ -446,6 +411,7 @@ body{
     stroke-width:2;
     stroke-linecap:round;
     stroke-linejoin:round;
+    transition:transform 0.22s ease;
 }
 
 
@@ -484,23 +450,23 @@ body{
 }
 
 
-.card:hover .h3,
 .card.is-active .h3{
 
-    color:#fff;
+    color:#F5F5F6;
 }
 
-.card:hover .inf p,
 .card.is-active .inf p{
 
-    color:rgba(255,255,255,0.82);
+    color:#C4C4C8;
 }
 
-.card:hover .chip,
 .card.is-active .chip{
-    color:#fff;
+    color:var(--card-accent);
     background:var(--chip-bg-hover);
-    border-color:var(--surface-border-hover);
+}
+
+.card.is-active .chip svg{
+    transform:scale(1.14);
 }
 
 
@@ -528,17 +494,11 @@ body{
 
     background:var(--chip-bg);
 
-    border:1px solid var(--surface-border);
+    border:none;
 
     border-radius:999px;
 
     padding:4px 10px;
-}
-
-.card:hover .tag{
-    color:var(--text-soft);
-    background:var(--chip-bg-hover);
-    border-color:var(--surface-border-hover);
 }
 
 .row{
@@ -557,10 +517,6 @@ body{
     stroke-width:2;
     stroke-linecap:round;
     stroke-linejoin:round;
-}
-
-.card:hover .row{
-    color:var(--brand);
 }
 
 
@@ -610,20 +566,53 @@ body{
 
 /* ---------- responsive ---------- */
 
+@media (min-width:641px){
+
+    .card:hover{
+        background:var(--card-hover);
+        border-color:var(--card-border-hover);
+    }
+
+    .card:hover .h3{
+        color:#F5F5F6;
+    }
+
+    .card:hover .inf p{
+        color:#C4C4C8;
+    }
+
+    .card:hover .chip{
+        color:var(--card-accent);
+        background:var(--chip-bg-hover);
+    }
+
+    .card:hover .chip svg{
+        transform:scale(1.14);
+    }
+
+    .card:hover .tag{
+        color:var(--text-soft);
+        background:var(--chip-bg-hover);
+    }
+
+    .card:hover .row{
+        color:var(--card-accent);
+    }
+
+}
+
 @media (max-width:640px){
 
+    :root{
+        --bg-base:#000000;
+    }
+
     body{
-        padding:40px 18px;
+        padding:44px 20px 40px;
     }
 
-    .listHead{
-        flex-direction:column;
-        align-items:stretch;
-        gap:10px;
-    }
-
-    .search-wrap{
-        width:100%;
+    .card .chip{
+        color:var(--card-accent);
     }
 
     .search-wrap input{
@@ -637,27 +626,21 @@ body{
 @media (max-width:430px){
 
     body{
-        padding-top:max(28px, env(safe-area-inset-top));
-        padding-right:max(16px, env(safe-area-inset-right));
-        padding-bottom:max(28px, env(safe-area-inset-bottom));
-        padding-left:max(16px, env(safe-area-inset-left));
+        padding-top:max(36px, env(safe-area-inset-top));
+        padding-right:max(18px, env(safe-area-inset-right));
+        padding-bottom:max(32px, env(safe-area-inset-bottom));
+        padding-left:max(18px, env(safe-area-inset-left));
     }
 
     .hero{
-        margin-bottom:26px;
+        margin-bottom:30px;
     }
 
-    .hero .h22{
-        font-size:46px;
-    }
-
-    .hero .h11{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:14px;
-        line-height:1.65;
+    .hero h1{
+        font-size:44px;
+        letter-spacing:-0.8px;
+        line-height:1.06;
+        padding-left:12px;
     }
 
     .topRow{
