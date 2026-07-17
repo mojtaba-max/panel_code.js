@@ -392,6 +392,13 @@ body{
     border-color:var(--surface-border-hover);
 }
 
+.card.is-active{
+
+    background:var(--surface-hover);
+    border-color:rgba(45,212,191,0.35);
+    box-shadow:0 0 0 1px rgba(45,212,191,0.18);
+}
+
 .card:focus-visible{
     outline:2px solid rgba(45,212,191,0.55);
     outline-offset:2px;
@@ -477,17 +484,20 @@ body{
 }
 
 
-.card:hover .h3{
+.card:hover .h3,
+.card.is-active .h3{
 
     color:#fff;
 }
 
-.card:hover .inf p{
+.card:hover .inf p,
+.card.is-active .inf p{
 
     color:rgba(255,255,255,0.82);
 }
 
-.card:hover .chip{
+.card:hover .chip,
+.card.is-active .chip{
     color:#fff;
     background:var(--chip-bg-hover);
     border-color:var(--surface-border-hover);
