@@ -1,12 +1,4 @@
 const cards = document.getElementsByClassName('card');
-const titles = document.getElementsByClassName('h3');
-
-let mv = document.getElementById('mv');
-mv.innerText = String(cards.length).padStart(2, '0');
-
-let md = document.getElementById('md');
-md.innerText = titles[0].innerText;
-
 
 let search = document.getElementById('search');
 let empty = document.getElementById('empty');
