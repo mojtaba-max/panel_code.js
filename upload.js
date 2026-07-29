@@ -20,6 +20,7 @@
     const tokenForm = document.getElementById('token-form');
     const tokenInput = document.getElementById('token-input');
     const uploadApp = document.getElementById('upload-app');
+    const changeTokenBtn = document.getElementById('change-token');
     const form = document.getElementById('upload-form');
     const folderInput = document.getElementById('folder');
     const folderInfo = document.getElementById('folder-info');
@@ -59,6 +60,15 @@
         }
         localStorage.setItem(TOKEN_STORAGE_KEY, token);
         showUploadApp();
+    });
+
+    changeTokenBtn.addEventListener('click', function () {
+        localStorage.removeItem(TOKEN_STORAGE_KEY);
+        uploadApp.hidden = true;
+        tokenGate.hidden = false;
+        tokenInput.value = '';
+        tokenInput.focus();
+        log('', null);
     });
 
     folderInput.addEventListener('change', onFolderChange);
@@ -212,6 +222,15 @@
 
         if (!response.ok) {
             const msg = (data && data.message) ? data.message : ('HTTP ' + response.status);
+            const needed = response.headers.get('X-Accepted-GitHub-Permissions');
+            if (/resource not accessible/i.test(msg)) {
+                throw new Error(
+                    'توکن دسترسی نوشتن روی این ریپو ندارد.\n'
+                    + 'یک توکن Classic با تیک repo بساز، یا Fine-grained با Contents: Read and write روی panel_code.js.\n'
+                    + 'بعد از «تغییر توکن GitHub» توکن جدید را وارد کن.'
+                    + (needed ? ('\nدسترسی لازم: ' + needed) : '')
+                );
+            }
             throw new Error(msg);
         }
 

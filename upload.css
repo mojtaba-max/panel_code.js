@@ -91,6 +91,22 @@
     color: var(--text);
 }
 
+.upload-change-token {
+    margin-top: 12px;
+    border: 0;
+    background: transparent;
+    color: var(--text-faint);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.upload-change-token:hover {
+    color: var(--text-soft);
+}
+
 .upload-header h1 {
     margin: 0 0 8px;
     font-size: 28px;
