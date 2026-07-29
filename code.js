@@ -1,4 +1,6 @@
 const ALLOWED_COLORS = new Set(['blue', 'red', 'green', 'amber']);
+const UPLOAD_PASSWORD = 'Adm1238';
+const UPLOAD_GATE_KEY = 'panel-upload-unlocked';
 
 const list = document.getElementById('projects');
 const search = document.getElementById('search');
@@ -109,6 +111,17 @@ function openProject(args) {
     }
 
     window.location.href = project.href;
+}
+
+function openUpload(args) {
+    const password = (args[0] || '').trim();
+
+    if (password !== UPLOAD_PASSWORD) {
+        return;
+    }
+
+    sessionStorage.setItem(UPLOAD_GATE_KEY, '1');
+    window.location.href = 'upload.html';
 }
 
 function searchByTag(args) {
@@ -321,6 +334,7 @@ Pilot.mount({
     commands: [
         { names: ['open', 'go'], args: 1, run: openProject },
         { names: ['tag', 'tags'], args: 1, run: searchByTag },
+        { names: ['add'], args: 1, run: openUpload },
     ],
     suggest: suggestCommands,
 });

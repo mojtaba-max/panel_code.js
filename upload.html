@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0C0C0E">
+    <title>Upload Project</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+<div id="gate" class="upload-gate">
+    <form id="gate-form" class="upload-gate-form" autocomplete="off">
+        <h1>ورود به آپلود</h1>
+        <label>
+            رمز
+            <input id="gate-password" type="password" required autofocus>
+        </label>
+        <button type="submit">ورود</button>
+        <p id="gate-error" class="upload-gate-error" hidden>رمز اشتباه است.</p>
+    </form>
+</div>
+
+<div id="token-gate" class="upload-gate" hidden>
+    <form id="token-form" class="upload-gate-form" autocomplete="off">
+        <h1>توکن GitHub</h1>
+        <p class="upload-gate-note">یک‌بار وارد کن؛ فقط روی همین مرورگر ذخیره می‌شود.</p>
+        <label>
+            Token
+            <input id="token-input" type="password" required spellcheck="false" placeholder="github_pat_…">
+        </label>
+        <button type="submit">ذخیره و ادامه</button>
+    </form>
+</div>
+
+<div id="upload-app" class="upload-app" hidden>
+    <header class="upload-header">
+        <a class="upload-back" href="index.html">← بازگشت</a>
+        <h1>آپلود پروژه</h1>
+        <p>فولدر پروژه در <code>project/</code> و مشخصات در <code>projects.json</code> ذخیره می‌شود.</p>
+    </header>
+
+    <form id="upload-form" class="upload-form" autocomplete="off">
+        <fieldset>
+            <legend>فولدر پروژه</legend>
+            <label>
+                انتخاب فولدر
+                <input id="folder" name="folder" type="file" webkitdirectory directory multiple required>
+            </label>
+            <p id="folder-info" class="upload-hint" hidden></p>
+            <label>
+                نام فولدر (slug)
+                <input id="slug" name="slug" type="text" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" placeholder="my-project" spellcheck="false">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>مشخصات کارت</legend>
+            <label>
+                عنوان
+                <input id="title" name="title" type="text" required placeholder="My Project">
+            </label>
+            <label>
+                توضیح
+                <textarea id="description" name="description" rows="3" required placeholder="توضیح کوتاه پروژه…"></textarea>
+            </label>
+            <div class="upload-row">
+                <label>
+                    دسته‌بندی
+                    <select id="category" name="category" required>
+                        <option value="Game">Game</option>
+                        <option value="UI">UI</option>
+                        <option value="Tool">Tool</option>
+                        <option value="Timer">Timer</option>
+                    </select>
+                </label>
+                <label>
+                    رنگ
+                    <select id="color" name="color" required>
+                        <option value="blue">blue</option>
+                        <option value="red">red</option>
+                        <option value="green">green</option>
+                        <option value="amber">amber</option>
+                    </select>
+                </label>
+            </div>
+            <label>
+                تگ‌ها (با ویرگول جدا کنید)
+                <input id="tags" name="tags" type="text" placeholder="game, fun, بازی">
+            </label>
+            <label>
+                آیکون SVG (اختیاری — محتوای داخل svg)
+                <textarea id="icon" name="icon" rows="2" placeholder='<rect x="4" y="4" width="16" height="16" rx="2"/>'></textarea>
+            </label>
+        </fieldset>
+
+        <button id="submit" type="submit">آپلود به GitHub</button>
+    </form>
+
+    <pre id="log" class="upload-log" aria-live="polite"></pre>
+</div>
+
+<script src="upload.js"></script>
+</body>
+</html>

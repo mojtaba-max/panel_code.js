@@ -831,6 +831,19 @@ body{
     font-size:11px;
 }
 
+.footer-upload{
+
+    color:rgba(255,255,255,0.45);
+
+    font-size:11px;
+
+    text-decoration:none;
+}
+
+.footer-upload:hover{
+    color:rgba(255,255,255,0.75);
+}
+
 .page-end-glow{
 
     position:absolute;
